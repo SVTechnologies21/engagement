@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engagement Invitation - Sita & Arjun</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #5a0f1c, #8b1e3f, #c9a227);
+    color: #fff;
+}
+.section {
+    padding: 40px 15px;
+    text-align: center;
+}
+.card {
+    max-width: 800px;
+    margin: auto;
+    padding: 25px 20px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: gold;
+}
+.subtitle {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+.names {
+    font-size: 34px;
+    margin: 20px 0;
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+}
+.details {
+    font-size: 16px;
+    margin: 8px 0;
+}
+.highlight {
+    color: #ffdfba;
+}
+.countdown {
+    font-size: 22px;
+    margin-top: 15px;
+    color: #fff3cd;
+}
+.map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    border: none;
+}
+.footer {
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+.footer strong {
+    color: gold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+.divider {
+    margin: 15px auto;
+    width: 60%;
+    height: 1px;
+    background: gold;
+    opacity: 0.5;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+    .title { font-size: 24px; }
+    .names { font-size: 28px; }
+    .details { font-size: 15px; }
+    .countdown { font-size: 20px; }
+    .card { padding: 20px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="section">
+<div class="card">
+<div class="title">श्री गणेशाय नमः</div>
+</div>
+</div>
+
+<!-- COUPLE SECTION -->
+<div class="section">
+<div class="card">
+<div class="subtitle">With the blessings of our beloved families</div>
+<div class="names">Sita ❤️ Arjun</div>
+<div class="details">Daughter of <span class="highlight">Mr. Ramesh Sharma & Mrs. Lakshmi Sharma</span></div>
+<div class="details">Son of <span class="highlight">Mr. Rajesh Verma & Mrs. Sunita Verma</span></div>
+</div>
+</div>
+
+<!-- EVENT DETAILS -->
+<div class="section">
+<div class="card">
+<div class="title">Engagement Ceremony</div>
+<div class="details">📅 20 May 2026</div>
+<div class="details">⏰ 6:00 PM onwards</div>
+<div class="details">📍 Sri Venkateswara Convention Hall, Nellore</div>
+<div class="countdown" id="countdown"></div>
+</div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="section map">
+<div class="card">
+<div class="title">Venue Location</div>
+<iframe src="https://www.google.com/maps?q=Sri+Venkateswara+Convention+Hall+Nellore&output=embed"></iframe>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="section">
+<div class="card footer">
+<strong>With Love & Gratitude</strong>
+<div>We warmly invite you to join us in celebrating this joyous occasion and bless the couple for their new journey together.</div>
+
+<div class="divider"></div>
+
+<div>✨ Your presence will make our celebration more special ✨</div>
+<div> Kindly grace the occasion with your blessings </div>
+
+<div class="divider"></div>
+</div>
+</div>
+
+<script>
+const eventDate = new Date("May 20, 2026 18:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "The Ceremony Has Begun";
+    }
+}, 1000);
+</script>
+
+<div class="section">
+<div class="card footer">
+    Contact <br>
+    Instagram :- <a href="https://www.instagram.com/srivatsajonnalagadda?igsh=MWI3MnhvOXp2bmo3NA%3D%3D">Sri Venkateswara Technolagies</a>
+    </div>
+    </div>
+</body>
+</html>
